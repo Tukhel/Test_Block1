@@ -9,3 +9,17 @@
 // [“Russia”, “Denmark”, “Kazan”] → []
 
 
+string[] array = {"Hello", "2", "world", ":-)"};
+int sum = FindAmountElements(array);
+Console.WriteLine(sum);
+
+int FindAmountElements(string[] arr)
+{   
+    int sum = 0;
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length < 4) sum++;
+    }
+    return sum;
+}
