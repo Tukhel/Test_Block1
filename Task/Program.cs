@@ -12,8 +12,6 @@
 string[] array = {"Hello", "2", "world", ":-)"};
 int sum = FindAmountElements(array);
 PrintArray(array);
-Console.WriteLine();
-Console.WriteLine($"Колличечтво элементов в массиве длинной меньее 4х символов = {sum}");
 
 int FindAmountElements(string[] arr)
 {   
@@ -24,6 +22,22 @@ int FindAmountElements(string[] arr)
         if (arr[i].Length < 4) sum++;
     }
     return sum;
+}
+
+string[] NewArray(string[] arr, int size)
+{
+    string[] newArray = new string[size];
+    int j = 0;
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length < 4) 
+        {
+            newArray[j] = arr[i];
+            j++;
+        }    
+    }
+    return newArray;
 }
 
 void PrintArray(string[] arr)
